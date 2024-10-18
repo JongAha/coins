@@ -1,0 +1,412 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    /* padding: 10px; */
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 95%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.recharge {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.divider {
+    height: 1px;
+    background-color: #ddd;
+    margin: 0 0 10px 0;
+}
+
+.tips {
+    font-size: 12px;
+    color: #fe2c55;
+    margin-bottom: 15px;
+}
+
+.header {
+    padding: 10px 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.header h4 {
+    font-size: 18px;
+    margin: 10px auto;
+}
+
+.coin-options {
+    min-height: 30vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.coin-option {
+    /* border: 1px solid #ddd; */
+    background-color: #f1f1f2;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.price {
+    font-size: 12px;
+    color: rgba(0, 0, 0, .56);
+}
+
+.centerCus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.coin-option.active {
+    border: 1px solid #ff4081;
+    background-color: #ffebee;
+    border-color: #ff4081;
+}
+
+.payBox {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.payBox img {
+    margin-left: 3px;
+    width: 30px;
+}
+
+.cashback {
+    background-color: #e8f5e9;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    /* border-top: 1px solid #ddd; */
+    padding: 10px;
+    text-align: center;
+    /* box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); */
+}
+
+.left {
+    float: left;
+    margin-left: 10px;
+    color: rgba(0, 0, 0, .56);
+}
+
+.right {
+    float: right;
+    margin-right: 10px;
+    color: rgba(0, 0, 0, .56);
+}
+
+
+.buy-button {
+    background-color: #fe2c55;
+    color: white;
+    font-weight: bold;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+#pop {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1;
+}
+
+.show-box {
+    width: 100%;
+    height: 60vh;
+    background-color: #fff;
+    position: fixed;
+    border-radius: 20px 20px 0 0;
+    bottom: 0;
+    bottom: -60vh;
+    z-index: 2;
+    padding: 0 0.32rem;
+    box-sizing: border-box;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* 输入金额 */
+.showcontainer {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px 20px 0 0;
+}
+
+.showheader {
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+h1 {
+    margin: 0;
+    font-size: 18px;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+main {
+    /* flex-grow: 1; */
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.coin-icon {
+    margin-right: 10px;
+}
+
+#coinInput {
+    border: none;
+    font-size: 16px;
+    flex-grow: 1;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.key {
+    padding: 15px;
+    font-size: 18px;
+    background-color: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+}
+
+.backspace svg {
+    width: 20px;
+    height: 20px;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 10px 0;
+    font-weight: bold;
+    border-top: 1px solid #e0e0e0;
+}
+
+
+#rechargeButton {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    color: white;
+    background-color: #ccc;
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#rechargeButton svg {
+    margin-right: 10px;
+}
+
+#rechargeButton:not(:disabled) {
+    background-color: #fe2c55;
+}
+
+
+/* 充值加载中 */
+
+.load-box {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 100vw;
+    box-sizing: border-box;
+    position: fixed;
+    top: 10vh;
+    border-radius: 20px;
+    z-index: 2;
+}
+
+.load-iframe {
+    width: 40px;
+    height: 40px;
+}
+
+.load-text {
+    background-color: rgb(255, 255, 255);
+    width: 85vw;
+    min-height: 45vh;
+    border-radius: 20px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+
+/* 充值成功 */
+
+.success-box {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 100vw;
+    box-sizing: border-box;
+    position: fixed;
+    top: 10vh;
+    border-radius: 20px;
+    z-index: 2;
+}
+
+.success-text {
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    width: 90vw;
+    min-height: 45vh;
+    border-radius: 20px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.suc-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgba(204,
+            228,
+            67, 0.5);
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.suc-circle img {
+    width: 30px;
+    height: 30px;
+}
+
+.backBtn {
+    width: 40vw;
+    height: 50px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: #fe2c55;
+    color: white;
+    font-size: 18px;
+    margin-top: 20px;
+}
