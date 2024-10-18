@@ -10,7 +10,7 @@ coinOptions.forEach(option => {
             coinOptions.forEach(opt => opt.classList.remove('active'));
             this.classList.add('active');
             const price = this.dataset.price;
-            buyButton.textContent = `$ ${price}`;
+            buyButton.textContent = `NT$ ${price}`;
         }
     });
 });
@@ -33,10 +33,17 @@ function showPop() {
 
 function hidePop() {
     $('#pop').css('display', 'none');
-    $('.show-box').css({
-        'bottom': '-60vh',
-        'transition': 'all .1s ease-in'
-    })
+    if (screen.height < 800) {
+        $('.show-box').css({
+            'bottom': '-70vh',
+            'transition': 'all .1s ease-in'
+        })
+    } else {
+        $('.show-box').css({
+            'bottom': '-60vh',
+            'transition': 'all .1s ease-in'
+        })
+    }
     $('.load-box').css({
         'display': 'none'
     });
@@ -67,7 +74,12 @@ function updateInput() {
 
     // 更新输入框和总金额显示
     coinInput.value = numValue.toLocaleString();
-    totalAmount.textContent = `¥${numValue.toLocaleString()}`;
+
+
+    numValue = parseInt(numValue / 2.7);
+
+
+    totalAmount.textContent = `NT$${numValue.toLocaleString()}`;
 
     // 禁用或启用充值按钮
     rechargeButton.disabled = numValue === 0;
