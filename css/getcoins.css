@@ -2,17 +2,173 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     /* padding: 10px; */
-    background-color: #f0f0f0;
+    background-color: #fff;
 }
 
+/* headBar */
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0px 5px 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.logo svg {
+    width: 100px;
+    height: 42px;
+    margin-right: 10px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f2;
+    border-radius: 92px;
+    padding: 12px 16px;
+    width: 300px;
+    margin-right: 10px;
+}
+
+.search-bar input {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.search-button svg {
+    width: 20px;
+    height: 20px;
+    color: #a1a2a7;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+}
+
+.upload-button {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #cbcbcd;
+    border-radius: 4px;
+    padding: 8px 10px 8px 5px;
+    font-size: 16px;
+    min-width: 80px;
+    /* font-weight: bold; */
+    display: flex;
+    cursor: pointer;
+    margin-right: 16px;
+}
+
+.login-button {
+    background-color: #fe2c55;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 16px;
+    min-width: 80px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 16px;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+}
+
+.menu-button span {
+    width: 4px;
+    height: 4px;
+    background-color: #161823;
+    border-radius: 50%;
+}
+
+/* headBar end */
+
 .container {
-    width: 95%;
+    width: 100%;
     box-sizing: border-box;
     margin: 0 auto;
     background-color: white;
     border-radius: 10px;
     padding: 10px 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+.name-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.name-box h2 {
+    margin: 10px 0;
+}
+
+.inputName {
+    width: 40%;
+    min-width: 200px;
+    /* border: 1px solid #ddd; */
+    background-color: #f1f1f2;
+    border-radius: 2px;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.inputName input {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    font-size: 16px;
+    outline: none;
+    padding-right: 30px;
+    /* 为清除按钮预留空间 */
+}
+
+/* 清除图标的样式 */
+.clear-icon {
+    position: absolute;
+    top: 55%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: none;
+    /* 初始不显示图标 */
+}
+
+.icon {
+    width: 20px;
+    height: 15px;
+    color: #888;
+}
+
+.clear-icon:hover .icon {
+    color: #000;
 }
 
 .recharge {
@@ -48,8 +204,8 @@ body {
 .coin-options {
     min-height: 35vh;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
     margin-bottom: 20px;
 }
 
@@ -62,6 +218,10 @@ body {
     min-height: 10vh;
     text-align: center;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .price {
@@ -77,7 +237,7 @@ body {
 }
 
 .coin-option.active {
-    border: 1px solid #f2bf1a;  
+    border: 1px solid #f2bf1a;
 }
 
 .payBox {
@@ -186,12 +346,12 @@ body {
     box-sizing: border-box;
 }
 
-@media (max-height: 800px) {
+/* @media (max-height: 800px) {
     .show-box{
         height: 70vh;
         bottom: -70vh;
     }
-}
+} */
 
 .close {
     color: #aaa;

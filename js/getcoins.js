@@ -1,5 +1,5 @@
 const coinOptions = document.querySelectorAll('.coin-option');
-const buyButton = document.getElementById('buyButton');
+// const buyButton = document.getElementById('buyButton');
 const customOption = document.getElementById('custom-option');
 const closeModal = document.querySelector('.close');
 const customAmountInput = document.getElementById('customAmount');
@@ -19,9 +19,28 @@ function goLogin() {
     window.location.href = '../index.html';
 }
 
-buyButton.addEventListener('click', function () {
-    alert('Purchase initiated!');
+const inputField = document.getElementById('inputField');
+const clearButton = document.getElementById('clearButton');
+
+// 输入框内容变化时显示或隐藏清除按钮
+inputField.addEventListener('input', function () {
+    if (inputField.value.length > 0) {
+        clearButton.style.display = 'inline'; // 显示清除按钮
+    } else {
+        clearButton.style.display = 'none'; // 隐藏清除按钮
+    }
 });
+
+// 点击清除按钮清空输入框
+clearButton.addEventListener('click', function () {
+    inputField.value = ''; // 清空输入框内容
+    clearButton.style.display = 'none'; // 隐藏清除按钮
+    inputField.focus(); // 让输入框重新获得焦点
+});
+
+// buyButton.addEventListener('click', function () {
+//     alert('Purchase initiated!');
+// });
 
 function showPop() {
     $('#pop').css('display', 'block');
@@ -33,17 +52,21 @@ function showPop() {
 
 function hidePop() {
     $('#pop').css('display', 'none');
-    if (screen.height < 800) {
-        $('.show-box').css({
-            'bottom': '-70vh',
-            'transition': 'all .1s ease-in'
-        })
-    } else {
-        $('.show-box').css({
+    // if (screen.height < 800) {
+    //     $('.show-box').css({
+    //         'bottom': '-70vh',
+    //         'transition': 'all .1s ease-in'
+    //     })
+    // } else {
+    //     $('.show-box').css({
+    //         'bottom': '-60vh',
+    //         'transition': 'all .1s ease-in'
+    //     })
+    // }
+    $('.show-box').css({
             'bottom': '-60vh',
             'transition': 'all .1s ease-in'
         })
-    }
     $('.load-box').css({
         'display': 'none'
     });
@@ -136,6 +159,7 @@ function startCountdown() {
 rechargeButton.addEventListener('click', function () {
     if (coinInput.value !== '') {
         let coinsNum = document.querySelector('#coinsNum');
+        let username = document.querySelector('#userName');
         $('#pop').css('display', 'block');
         $('.show-box').css({
             'bottom': '-60vh',
@@ -151,6 +175,7 @@ rechargeButton.addEventListener('click', function () {
                 'display': 'none'
             });
             coinsNum.textContent = coinInput.value;
+            username.textContent = inputField.value;
 
             $('.success-box').css('display', 'flex');
 
