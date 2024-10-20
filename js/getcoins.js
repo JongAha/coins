@@ -1,3 +1,18 @@
+// 动态调整页面可视高度
+function adjustHeight() {
+    document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+    document.body.style.height = `${window.innerHeight}px`; 
+
+    document.documentElement.style.setProperty('--vw', `${window.innerWidth * 0.01}px`);
+    document.body.style.width = `${window.innerWidth}px`;
+}
+
+window.addEventListener('load', adjustHeight);
+
+window.addEventListener('resize', adjustHeight);
+
+
+
 const coinOptions = document.querySelectorAll('.coin-option');
 // const buyButton = document.getElementById('buyButton');
 const customOption = document.getElementById('custom-option');
@@ -64,7 +79,7 @@ function hidePop() {
     //     })
     // }
     $('.show-box').css({
-            'bottom': '-60vh',
+            'bottom': '-500px',
             'transition': 'all .1s ease-in'
         })
     $('.load-box').css({
@@ -162,7 +177,7 @@ rechargeButton.addEventListener('click', function () {
         let username = document.querySelector('#userName');
         $('#pop').css('display', 'block');
         $('.show-box').css({
-            'bottom': '-60vh',
+            'bottom': '-500px',
             'transition': 'all .1s ease-in'
         });
         $('.load-box').css({
