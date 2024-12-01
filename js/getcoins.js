@@ -25,7 +25,7 @@ coinOptions.forEach(option => {
             coinOptions.forEach(opt => opt.classList.remove('active'));
             this.classList.add('active');
             const price = this.dataset.price;
-            buyButton.textContent = `NT$ ${price}`;
+            buyButton.textContent = `$ ${price}`;
         }
     });
 });
@@ -59,10 +59,7 @@ clearButton.addEventListener('click', function () {
 
 function showPop() {
     $('#pop').css('display', 'block');
-    $('.show-box').css({
-        'bottom': '0',
-        'transition': 'all .1s ease-in'
-    })
+    $('.show-box').css('display', 'block');
 }
 
 function hidePop() {
@@ -78,17 +75,14 @@ function hidePop() {
     //         'transition': 'all .1s ease-in'
     //     })
     // }
-    $('.show-box').css({
-            'bottom': '-500px',
-            'transition': 'all .1s ease-in'
-        })
-    $('.load-box').css({
-        'display': 'none'
-    });
+    $('.show-box').css('display', 'none');
+    $('.load-box').css({ 'display': 'none' });
+    $('.load-box-2').css({ 'display': 'none' });
     clearInterval(timer); // 停止倒计时
     totalTime = 5 * 60 - 1; // 重置倒计时时间
 
     $('.success-box').css('display', 'none');
+    hideColorPicker();
 }
 
 
@@ -117,7 +111,7 @@ function updateInput() {
     numValue = parseInt(numValue / 2.7);
 
 
-    totalAmount.textContent = `NT$${numValue.toLocaleString()}`;
+    totalAmount.textContent = `$${numValue.toLocaleString()}`;
 
     // 禁用或启用充值按钮
     rechargeButton.disabled = numValue === 0;
@@ -130,6 +124,8 @@ keys.forEach(key => {
         // 判断是否点击了回退按钮
         if (this.classList.contains('backspace')) {
             currentValue = currentValue.slice(0, -1);
+        } else if (this.classList.contains('clear')) {
+            currentValue = '';
         } else {
             const keyValue = this.textContent;
 
@@ -174,23 +170,45 @@ function startCountdown() {
 rechargeButton.addEventListener('click', function () {
     if (coinInput.value !== '') {
         let coinsNum = document.querySelector('#coinsNum');
+        let coinsNum_1 = document.querySelector('#coinsNum_1');
+        let coinsPrice_1 = document.querySelector('#coinsPrice_1');
+        let coinsPrice_2 = document.querySelector('#coinsPrice_2');
         let username = document.querySelector('#userName');
+
+        coinsNum_1.textContent = coinInput.value;
+        coinsPrice_1.innerHTML = totalAmount.innerHTML;
+        coinsPrice_2.innerHTML = totalAmount.innerHTML;
+        
+
         $('#pop').css('display', 'block');
-        $('.show-box').css({
-            'bottom': '-500px',
-            'transition': 'all .1s ease-in'
-        });
-        $('.load-box').css({
-            'display': 'flex'
+        $('.show-box').css('display', 'none');
+        // $('.load-box').css({
+        //     'display': 'flex'
+        // });
+        $('.load-box-2').css({
+            'display': 'block'
         });
         //启动倒计时
         startCountdown();
         setTimeout(function () {
-            $('.load-box').css({
+            // $('.load-box').css({
+            //     'display': 'none'
+            // });
+            $('.load-box-2').css({
                 'display': 'none'
             });
             coinsNum.textContent = coinInput.value;
             username.textContent = inputField.value;
+
+            const circle = document.querySelector(".suc-circle");
+            const checkMark = document.querySelector(".check-mark");
+
+            circle.addEventListener("animationend", () => {
+                setTimeout(() => {
+                    checkMark.style.display = "block";
+                    checkMark.querySelector("path").style.animationPlayState = "running";
+                }, 10);
+            });
 
             $('.success-box').css('display', 'flex');
 
@@ -209,3 +227,27 @@ coinInput.addEventListener('keydown', function (e) {
 // 初始化输入框
 updateInput();
 
+
+// 显示颜色选择弹出框
+function showColorPicker() {
+    document.getElementById('colorPickerPopup').style.display = 'block';
+}
+
+// 隐藏颜色选择弹出框
+function hideColorPicker() {
+    document.getElementById('colorPickerPopup').style.display = 'none';
+}
+
+// 确认选择颜色并更新 :root 中的 --main-color
+document.getElementById('confirmColorButton').onclick = function () {
+    const selectedColor = document.getElementById('colorInput').value;
+    document.documentElement.style.setProperty('--main-color', selectedColor);
+    hideColorPicker();
+    hidePop();
+};
+
+// 修改 Log in 按钮的 onclick 事件
+function goChangeColor() {
+    showColorPicker();
+    $('#pop').css('display', 'block');
+}

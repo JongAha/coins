@@ -1,10 +1,16 @@
+:root {
+    --main-color: #fff;
+    --btn-color: #fe2c55;
+}
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     /* padding: 10px; */
     width: 100%;
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: var(--main-color);
 }
 
 /* headBar */
@@ -14,7 +20,7 @@ body {
     justify-content: space-between;
     padding: 5px 0px 5px 10px;
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: var(--main-color);
     border-bottom: 1px solid #e6e6e6;
 }
 
@@ -27,7 +33,7 @@ body {
 .search-bar {
     display: flex;
     align-items: center;
-    background-color: #f1f1f2;
+    background-color: var(--main-color);
     border-radius: 92px;
     padding: 12px 16px;
     width: 300px;
@@ -61,13 +67,13 @@ body {
 }
 
 @media (max-width: 768px) {
-    .hide{
+    .hide {
         display: none;
     }
 }
 
 .upload-button {
-    background-color: #fff;
+    background-color: var(--main-color);
     color: #000;
     border: 1px solid #cbcbcd;
     border-radius: 4px;
@@ -80,7 +86,7 @@ body {
 }
 
 .login-button {
-    background-color: #fe2c55;
+    background-color: var(--btn-color);
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -117,7 +123,7 @@ body {
     width: 100%;
     box-sizing: border-box;
     margin: 0 auto;
-    background-color: white;
+    background-color: var(--main-color);
     border-radius: 10px;
     padding: 10px 15px;
     /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
@@ -139,7 +145,7 @@ body {
     width: 40%;
     min-width: 200px;
     /* border: 1px solid #ddd; */
-    background-color: #f1f1f2;
+    background-color: var(--main-color);
     border-radius: 2px;
     padding: 10px;
     font-size: 16px;
@@ -212,8 +218,8 @@ body {
 .coin-options {
     min-height: 35vh;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
     margin-bottom: 20px;
 }
 
@@ -223,7 +229,7 @@ body {
     /* background-color: #f1f1f2; */
     border-radius: 2px;
     padding: 10px;
-    min-height: 8vh;
+    min-height: 6vh;
     text-align: center;
     cursor: pointer;
     display: flex;
@@ -252,7 +258,7 @@ body {
     display: flex;
     justify-content: start;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 15vh;
 }
 
 .payBox img {
@@ -261,7 +267,7 @@ body {
 }
 
 .cashback {
-    background-color: #e8f5e9;
+    background-color: var(--main-color);
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 20px;
@@ -272,7 +278,7 @@ body {
     bottom: 0;
     width: 100%;
     box-sizing: border-box;
-    background-color: white;
+    background-color: var(--main-color);
     /* border-top: 1px solid #ddd; */
     padding: 10px;
     text-align: center;
@@ -297,7 +303,7 @@ body {
 
 
 .buy-button {
-    background-color: #fe2c55;
+    background-color: var(--btn-color);
     color: white;
     font-weight: bold;
     margin-top: 5px;
@@ -321,7 +327,7 @@ body {
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: var(--main-color);
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
@@ -333,7 +339,7 @@ body {
 #pop {
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
@@ -343,15 +349,21 @@ body {
 
 .show-box {
     width: 100%;
-    height: 500px;
-    background-color: #fff;
+    max-width: 500px;
+    /* height: 500px; */
+    background-color: var(--main-color);
     position: fixed;
-    border-radius: 20px 20px 0 0;
-    bottom: 0;
-    bottom: -500px;
+    border-radius: 20px;
+    top: 50%;
+    /* 垂直居中 */
+    left: 50%;
+    /* 水平居中 */
+    transform: translate(-50%, -50%);
+    /* 通过平移实现居中 */
     z-index: 2;
-    padding: 0 0.32rem;
+    padding: 0.4rem 0.32rem;
     box-sizing: border-box;
+    display: none;
 }
 
 /* @media (max-height: 800px) {
@@ -381,8 +393,8 @@ body {
 .showcontainer {
     max-width: 400px;
     margin: 0 auto;
-    background-color: white;
-    min-height: 100vh;
+    background-color: var(--main-color);
+    /* min-height: 100vh; */
     display: flex;
     flex-direction: column;
     border-radius: 20px 20px 0 0;
@@ -439,9 +451,14 @@ label {
 }
 
 #coinInput {
+    background-color: var(--main-color);
     border: none;
     font-size: 16px;
     flex-grow: 1;
+}
+
+#coinInput:focus {
+    outline: none;
 }
 
 .keypad {
@@ -454,7 +471,7 @@ label {
 .key {
     padding: 15px;
     font-size: 18px;
-    background-color: #f8f8f8;
+    background-color: var(--main-color);
     border: 1px solid #e0e0e0;
     border-radius: 4px;
 }
@@ -480,7 +497,7 @@ label {
     padding: 15px;
     font-size: 18px;
     color: white;
-    background-color: #ccc;
+    background-color: var(--btn-color);
     border: none;
     border-radius: 4px;
     display: flex;
@@ -532,27 +549,29 @@ label {
 
 
 /* 充值成功 */
-
 .success-box {
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50vh;
-    width: 100vw;
+    width: 100%;
+    max-width: 500px;
     box-sizing: border-box;
-    position: fixed;
-    top: 10vh;
+    padding: 0.4rem 0.32rem;
     border-radius: 20px;
-    z-index: 2;
+    background-color: var(--main-color);
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .success-text {
     padding: 10px;
     box-sizing: border-box;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--main-color);
     width: 90vw;
-    min-height: 45vh;
     border-radius: 20px;
     z-index: 2;
     display: flex;
@@ -561,22 +580,76 @@ label {
     align-items: center;
 }
 
-.suc-circle {
-    width: 80px;
+.wai-circle {
     height: 80px;
-    border-radius: 50%;
-    background-color: rgba(204,
-            228,
-            67, 0.5);
-    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.suc-circle img {
-    width: 30px;
-    height: 30px;
+.suc-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #28a745;
+    position: relative;
+    overflow: hidden;
+    animation: expand-circle 1.5s ease-out forwards;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes expand-circle {
+    0% {
+        width: 0;
+        height: 0;
+        background-color: transparent;
+    }
+
+    50% {
+        width: 80px;
+        height: 80px;
+        background-color: #28a745;
+        opacity: 0.7;
+    }
+
+    100% {
+        width: 80px;
+        height: 80px;
+        background-color: #28a745;
+        opacity: 1;
+    }
+}
+
+.check-mark {
+    display: none;
+    stroke: white;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+}
+
+.check-mark circle {
+    stroke: transparent;
+}
+
+.check-mark path {
+    stroke: white;
+    animation: draw-check 0.5s ease-in-out forwards;
+    stroke-dasharray: 40;
+    stroke-dashoffset: 30;
+}
+
+@keyframes draw-check {
+    from {
+        stroke-dashoffset: 30;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
 }
 
 .backBtn {
@@ -584,8 +657,113 @@ label {
     height: 50px;
     font-weight: bold;
     border-radius: 5px;
-    background-color: #fe2c55;
+    background-color: var(--btn-color);
     color: white;
     font-size: 18px;
     margin-top: 20px;
+}
+
+/* css/getcoins.css */
+
+/* 颜色选择弹出框样式 */
+.color-picker-popup {
+    display: none;
+    /* 初始隐藏 */
+    position: fixed;
+    z-index: 1000;
+    /* 确保在最上层 */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* 居中 */
+    background-color: rgba(255, 255, 255, 0.9);
+    /* 半透明白色背景 */
+    border-radius: 10px;
+    /* 圆角 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    /* 阴影效果 */
+    padding: 20px;
+    /* 内边距 */
+    width: 300px;
+    /* 固定宽度 */
+    text-align: center;
+    /* 文本居中 */
+}
+
+.color-picker-popup h2 {
+    margin: 0 0 15px;
+    /* 标题下边距 */
+    font-size: 20px;
+    /* 标题字体大小 */
+    color: #333;
+    /* 标题颜色 */
+}
+
+.color-picker-popup input[type="color"] {
+    width: 100%;
+    /* 颜色输入框宽度 */
+    height: 40px;
+    /* 高度 */
+    border: none;
+    /* 无边框 */
+    border-radius: 5px;
+    /* 圆角 */
+    cursor: pointer;
+    /* 鼠标指针 */
+    margin-bottom: 15px;
+    /* 下边距 */
+}
+
+.color-picker-popup button {
+    background-color: var(--btn-color);
+    /* 使用按钮颜色 */
+    color: white;
+    /* 字体颜色 */
+    border: none;
+    /* 无边框 */
+    border-radius: 5px;
+    /* 圆角 */
+    padding: 10px 15px;
+    /* 内边距 */
+    font-size: 16px;
+    /* 字体大小 */
+    cursor: pointer;
+    /* 鼠标指针 */
+    margin: 5px;
+    /* 按钮间距 */
+    transition: background-color 0.3s;
+    /* 背景颜色过渡效果 */
+}
+
+.color-picker-popup button:hover {
+    background-color: #d81b60;
+    /* 悬停时的背景颜色 */
+}
+
+
+/* 加载中2 */
+.load-box-2 {
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    padding: 0.4rem 0.32rem;
+    border-radius: 20px;
+    color: #aaa;
+    background-color: var(--main-color);
+    display: none;
+    /* 初始隐藏 */
+    position: fixed;
+    z-index: 1000;
+    /* 确保在最上层 */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.load-left {
+    float: left;
+}
+
+.load-right {
+    float: right;
 }

@@ -21,8 +21,7 @@ header {
     padding: 20px;
 }
 
-.back-button,
-.skip-button {
+.back-button{
     background: none;
     border: none;
     color: #ffffff;

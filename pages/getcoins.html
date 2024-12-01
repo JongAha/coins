@@ -3,15 +3,24 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Get Coins</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>احصل على العملات</title>
     <link type="text/css" rel="stylesheet" href="../css/getcoins.css">
     <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="../js/getcoins.js" defer></script>
+
 </head>
 
 <body>
 
+    <!-- 在 <body> 标签内添加颜色选择弹出框 -->
+    <div id="colorPickerPopup" class="color-picker-popup" style="display: none;">
+        <h2>Select a Color</h2>
+        <input type="color" id="colorInput" value="#ffffff">
+        <button id="confirmColorButton">Confirm</button>
+        <button onclick="hideColorPicker()">Cancel</button>
+    </div>
 
     <!-- <div class="header">
         <button class="back-button" onclick="goLogin()">
@@ -89,7 +98,7 @@
                     <span>Upload</span>
                 </button>
             </div>
-            <button class="login-button">Log in</button>
+            <button class="login-button" onclick="goChangeColor()">Log in</button>
             <button class="menu-button">
                 <span></span>
                 <span></span>
@@ -101,19 +110,19 @@
     <div class="container">
 
         <div class="name-box">
-                <h2 class="name">Get Coins</h2>
-                <div style="cursor: pointer;">view transaction history</div>
+            <h2 class="name">احصل على العملات</h2>
+            <div style="cursor: pointer;">عرض تاريخ المعاملات</div>
         </div>
         <div class="inputName">
-            <input type="text" id="inputField"  placeholder="Enter username"/>
+            <input type="text" id="inputField" placeholder="أدخل اسم المستخدم" />
             <span id="clearButton" class="clear-icon">
                 <!-- SVG × 图标 -->
                 <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
                     class="icon">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg> -->
-                <svg t="1729390778379" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3470"
-                    width="15" height="15">
+                <svg t="1729390778379" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="3470" width="15" height="15">
                     <path
                         d="M519.656727 472.459636l-160.512-160.488727a36.584727 36.584727 0 1 0-51.712 51.712l160.488728 160.512-160.488728 160.512a36.584727 36.584727 0 1 0 51.712 51.712l160.512-160.512 160.488728 160.512a36.584727 36.584727 0 1 0 51.735272-51.712l-160.512-160.512 160.512-160.512a36.584727 36.584727 0 1 0-51.735272-51.712L519.68 472.436364zM512 1024C229.236364 1024 0 794.763636 0 512S229.236364 0 512 0s512 229.236364 512 512-229.236364 512-512 512z"
                         fill="#888888" p-id="3471"></path>
@@ -122,7 +131,7 @@
         </div>
 
         <div class="coinsBar">
-            <div class="recharge">Recharge</div>
+            <div class="recharge">إعادة شحن</div>
             <!-- <div class="divider"></div>
             <div class="tips">Save around 25% with a lower third-party service fee.</div> -->
         </div>
@@ -142,7 +151,7 @@
                             fill="#fff"></path>
                     </svg>
                     <strong>70</strong>
-                    <div class="price">NT$26</div>
+                    <div class="price">$26</div>
                 </div>
             </div>
             <div class="coin-option" data-coins="350" data-price="595">
@@ -158,7 +167,7 @@
                             fill="#fff"></path>
                     </svg>
                     <strong>350</strong>
-                    <div class="price">NT$129</div>
+                    <div class="price">$129</div>
                 </div>
             </div>
             <div class="coin-option" data-coins="700" data-price="1189">
@@ -173,7 +182,7 @@
                             fill="#fff"></path>
                     </svg>
                     <strong>700</strong>
-                    <div class="price">NT$259</div>
+                    <div class="price">$259</div>
                 </div>
             </div>
             <div class="coin-option" data-coins="1400" data-price="2375">
@@ -188,7 +197,7 @@
                             fill="#fff"></path>
                     </svg>
                     <strong>1,400</strong>
-                    <div class="price">NT$519</div>
+                    <div class="price">$519</div>
                 </div>
             </div>
             <div class="coin-option" data-coins="3500" data-price="5939">
@@ -204,7 +213,7 @@
                             fill="#fff"></path>
                     </svg>
                     <strong>3,500</strong>
-                    <div class="price">NT$1299</div>
+                    <div class="price">$1299</div>
                 </div>
             </div>
             <div class="coin-option" data-coins="7000" data-price="11879">
@@ -219,7 +228,7 @@
                             fill="#fff"></path>
                     </svg>
                     <strong>7,000</strong>
-                    <div class="price">NT$2,595</div>
+                    <div class="price">$2,595</div>
                 </div>
             </div>
             <div class="coin-option" data-coins="17500" data-price="29695">
@@ -234,7 +243,7 @@
                             fill="#fff"></path>
                     </svg>
                     <strong>17,500</strong>
-                    <div class="price">NT$6,489</div>
+                    <div class="price">$6,489</div>
                 </div>
             </div>
             <div class="coin-option" id="custom-option" onclick="showPop()">
@@ -249,8 +258,8 @@
                             d="M33 19a5.03 5.03 0 0 1-5.06-5h-3.38v13.61a3.07 3.07 0 0 1-3.1 3.06c-1.7 0-3.09-1.37-3.09-3.06a3.07 3.07 0 0 1 3.94-2.94v-3.4A6.43 6.43 0 0 0 15 27.6c0 3.54 2.9 6.4 6.47 6.4a6.43 6.43 0 0 0 6.47-6.39v-6.94A8.47 8.47 0 0 0 33 22.33V19Z"
                             fill="#fff"></path>
                     </svg>
-                    <strong>Custom</strong>
-                    <div class="price">large amount Supported</div>
+                    <strong>مخصص</strong>
+                    <!-- <div class="price">large amount Supported</div> -->
                 </div>
             </div>
         </div>
@@ -268,10 +277,10 @@
     </div>
 
     <div class="footer">
-        <div class="left">Total</div>
-        <div class="right" id="buyButton">NT$ 26</div>
+        <div class="left">الإجمالي</div>
+        <div class="right" id="buyButton">$ 26</div>
         <button class="buy-button">
-            Recharge
+            إعادة شحن
         </button>
     </div>
 
@@ -282,12 +291,9 @@
         <div class="showcontainer">
             <header class="showheader">
                 <button class="back-button" onclick="hidePop()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M19 12H5M12 19l-7-7 7-7" />
-                    </svg>
+                    <p style="font-size: 30px;margin: 0;">×</p>
                 </button>
-                <h1>Custom</h1>
+                <h1 style="font-size: 20px;color: #000;">ملخص الطلب</h1>
                 <button class="help-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -300,7 +306,7 @@
             <main>
                 <div class="input-container">
                     <label for="coinInput" style="color: #000;">
-                        Number of Coins
+                        عدد العملات
                         <img style="width: 15px;" src="../imgs/down.png" alt="">
                     </label>
 
@@ -321,26 +327,27 @@
                     <button class="key">1</button>
                     <button class="key">2</button>
                     <button class="key">3</button>
-                    <button class="key backspace">
+                    <!-- <button class="key backspace">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path>
                             <line x1="18" y1="9" x2="12" y2="15"></line>
                             <line x1="12" y1="9" x2="18" y2="15"></line>
                         </svg>
-                    </button>
+                    </button> -->
+                    <button class="key backspace">x</button>
                     <button class="key">4</button>
                     <button class="key">5</button>
                     <button class="key">6</button>
-                    <button class="key">000</button>
+                    <button class="key">0</button>
                     <button class="key">7</button>
                     <button class="key">8</button>
                     <button class="key">9</button>
-                    <button class="key">0</button>
+                    <button class="key clear">C</button>
                 </div>
                 <div class="total">
-                    <span>Total</span>
-                    <span id="totalAmount">NT$0</span>
+                    <span>الإجمالي</span>
+                    <span id="totalAmount">$0</span>
                 </div>
 
                 <div>
@@ -354,7 +361,7 @@
                                 d="M5 23.15V10.5c0-1.2 1.06-2.17 2.26-2.28 3.05-.25 8.87-1.52 15.34-6.99.8-.67 2-.67 2.8 0 6.46 5.46 12.28 6.74 15.34 7 1.2.1 2.26 1.07 2.26 2.27v12.65c0 14.13-14.77 21.8-18.27 23.43-.47.22-1 .22-1.47 0C19.76 44.96 5 37.28 5 23.15Zm4-11.1v11.1c0 5.57 2.88 10.04 6.56 13.5 3.1 2.91 6.5 4.86 8.44 5.85a37.07 37.07 0 0 0 8.43-5.85C36.11 33.2 39 28.72 39 23.15V12.04c-3.65-.53-9.1-2.16-15-6.8-5.91 4.64-11.35 6.27-15 6.8Z">
                             </path>
                         </svg>
-                        <strong>Recharge</strong>
+                        <strong>إعادة شحن</strong>
                     </button>
                 </div>
             </main>
@@ -372,20 +379,86 @@
         </div>
     </div>
 
+    <!-- 充值加载version2 -->
+    <div class="load-box-2">
+
+        <header class="showheader">
+            <button class="back-button" onclick="hidePop()">
+                <p style="font-size: 30px;margin: 0;">×</p>
+            </button>
+            <h1 style="font-size: 20px;color: #000;">ملخص الطلب</h1>
+            <button class="help-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+            </button>
+        </header>
+
+        <main>
+            <div>
+                <p class="load-left">اسم حامل البطاقة:</p>
+                <p class="load-right">Alu Alhab Tnari</p>
+            </div>
+            <div>
+                <p class="load-left">العملات:</p>
+                <p class="load-right"><span id="coinsNum_1">0</span></p>
+            </div>
+            <div>
+                <p class="load-left">سعر العملات:</p>
+                <p class="load-right"><span id="coinsPrice_1">0</span></p>
+            </div>
+            <div>
+                <p class="load-left">طريقة الدفع:</p>
+            </div>
+            <div>
+                <img class="load-left" style="width: 50px;margin: 5px 5px 0 0;" src="../imgs/visa.png" alt="">
+                <p class="load-left">**********6621</p>
+                <p class="load-right">تم التحقق</p>
+            </div>
+            <div>
+                <p class="load-left">الإجمالي:</p>
+                <p class="load-right"><span id="coinsPrice_2">0</span></p>
+            </div>
+
+            <div>
+                <button id="rechargeButton" disabled>
+                    <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                        <path
+                            d="M28.22 13.7a4.83 4.83 0 0 0 4.86 4.8l-.04 3.45c-1.77 0-3.4-.53-4.75-1.43l-.09 6.99a6.64 6.64 0 0 1-6.69 6.3 6.44 6.44 0 0 1-6.53-6.45 6.63 6.63 0 0 1 7.61-6.4l-.04 3.7a2.97 2.97 0 0 0-3.88 2.7 2.85 2.85 0 0 0 2.89 2.85 2.93 2.93 0 0 0 2.96-2.85l.16-13.66h3.54Z">
+                        </path>
+                        <path
+                            d="M5 23.15V10.5c0-1.2 1.06-2.17 2.26-2.28 3.05-.25 8.87-1.52 15.34-6.99.8-.67 2-.67 2.8 0 6.46 5.46 12.28 6.74 15.34 7 1.2.1 2.26 1.07 2.26 2.27v12.65c0 14.13-14.77 21.8-18.27 23.43-.47.22-1 .22-1.47 0C19.76 44.96 5 37.28 5 23.15Zm4-11.1v11.1c0 5.57 2.88 10.04 6.56 13.5 3.1 2.91 6.5 4.86 8.44 5.85a37.07 37.07 0 0 0 8.43-5.85C36.11 33.2 39 28.72 39 23.15V12.04c-3.65-.53-9.1-2.16-15-6.8-5.91 4.64-11.35 6.27-15 6.8Z">
+                        </path>
+                    </svg>
+                    <strong>جارٍ معالجة الدفع</strong>
+                </button>
+            </div>
+        </main>
+    </div>
+
 
     <!-- 充值成功 -->
     <div class="success-box">
         <div class="success-text">
-            <div class="suc-circle">
-                <img src="../imgs/success.png" alt="">
+            <div class="wai-circle">
+                <div class="suc-circle">
+                    <svg class="check-mark" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="26" cy="26" r="25" fill="none" stroke-width="2"></circle>
+                        <path d="M14 27 L22 35 L38 19" fill="none" stroke-width="3"></path>
+                    </svg>
+                </div>
             </div>
-
-            <h3>Payment Completed</h3>
-            <p style="text-align: center;font-size:16px;color:#aaa;">
-                You top up <span id="coinsNum">0</span> coins to <span id="userName">user</span>, and you can use the coins to send virtual gifts</p>
-            <button class="backBtn" onclick="hidePop()">Go back</button>
+            <h3>تم إكمال الدفع</h3>
+            <p style="text-align: center; font-size: 16px; color: #aaa;">
+                لقد قمت بإعادة شحن <span id="coinsNum">0</span> عملات إلى <span id="userName">المستخدم</span>، ويمكنك استخدام العملات لإرسال الهدايا الافتراضية
+            </p>
+            <button class="backBtn" onclick="hidePop()">إغلاق</button>
         </div>
     </div>
+
 
 
 
