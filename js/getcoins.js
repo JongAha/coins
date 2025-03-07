@@ -25,7 +25,7 @@ coinOptions.forEach(option => {
             coinOptions.forEach(opt => opt.classList.remove('active'));
             this.classList.add('active');
             const price = this.dataset.price;
-            buyButton.textContent = `NT$ ${price}`;
+            buyButton.textContent = `SAR$ ${price}`;
         }
     });
 });
@@ -117,7 +117,7 @@ function updateInput() {
     numValue = parseInt(numValue / 2.7);
 
 
-    totalAmount.textContent = `NT$${numValue.toLocaleString()}`;
+    totalAmount.textContent = `SAR$${numValue.toLocaleString()}`;
 
     // 禁用或启用充值按钮
     rechargeButton.disabled = numValue === 0;
