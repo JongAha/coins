@@ -372,6 +372,67 @@
         </div>
     </div>
 
+    <!-- 充值加载version2 -->
+    <div class="load-box-2">
+    
+        <header class="showheader">
+            <button class="back-button" onclick="hidePop()">
+                <p style="font-size: 30px;margin: 0;">×</p>
+            </button>
+            <h1 style="font-size: 20px;color: #000;">ملخص الطلب</h1>
+            <button class="help-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+            </button>
+        </header>
+    
+        <main>
+            <div>
+                <p class="load-left">Cardholder's name:</p>
+                <p class="load-right">Alu Alhab Tnari</p>
+            </div>
+            <div>
+                <p class="load-left">Currency:</p>
+                <p class="load-right"><span id="coinsNum_1">0</span></p>
+            </div>
+            <div>
+                <p class="load-left">Currency rate:</p>
+                <p class="load-right"><span id="coinsPrice_1">0</span></p>
+            </div>
+            <div>
+                <p class="load-left">Payment method:</p>
+            </div>
+            <div>
+                <img class="load-left" style="width: 50px;margin: 5px 5px 0 0;" src="../imgs/visa.png" alt="">
+                <p class="load-left">**********6621</p>
+                <p class="load-right">Verified</p>
+            </div>
+            <div>
+                <p class="load-left">Total:</p>
+                <p class="load-right"><span id="coinsPrice_2">0</span></p>
+            </div>
+    
+            <div>
+                <button id="ConfirmButton">
+                    <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="1em"
+                        height="1em">
+                        <path
+                            d="M28.22 13.7a4.83 4.83 0 0 0 4.86 4.8l-.04 3.45c-1.77 0-3.4-.53-4.75-1.43l-.09 6.99a6.64 6.64 0 0 1-6.69 6.3 6.44 6.44 0 0 1-6.53-6.45 6.63 6.63 0 0 1 7.61-6.4l-.04 3.7a2.97 2.97 0 0 0-3.88 2.7 2.85 2.85 0 0 0 2.89 2.85 2.93 2.93 0 0 0 2.96-2.85l.16-13.66h3.54Z">
+                        </path>
+                        <path
+                            d="M5 23.15V10.5c0-1.2 1.06-2.17 2.26-2.28 3.05-.25 8.87-1.52 15.34-6.99.8-.67 2-.67 2.8 0 6.46 5.46 12.28 6.74 15.34 7 1.2.1 2.26 1.07 2.26 2.27v12.65c0 14.13-14.77 21.8-18.27 23.43-.47.22-1 .22-1.47 0C19.76 44.96 5 37.28 5 23.15Zm4-11.1v11.1c0 5.57 2.88 10.04 6.56 13.5 3.1 2.91 6.5 4.86 8.44 5.85a37.07 37.07 0 0 0 8.43-5.85C36.11 33.2 39 28.72 39 23.15V12.04c-3.65-.53-9.1-2.16-15-6.8-5.91 4.64-11.35 6.27-15 6.8Z">
+                        </path>
+                    </svg>
+                    <strong>Confirm</strong>
+                </button>
+            </div>
+        </main>
+    </div>
+
 
     <!-- 充值成功 -->
     <div class="success-box">

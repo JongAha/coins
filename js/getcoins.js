@@ -1,7 +1,7 @@
 // 动态调整页面可视高度
 function adjustHeight() {
     document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
-    document.body.style.height = `${window.innerHeight}px`; 
+    document.body.style.height = `${window.innerHeight}px`;
 
     document.documentElement.style.setProperty('--vw', `${window.innerWidth * 0.01}px`);
     document.body.style.width = `${window.innerWidth}px`;
@@ -79,10 +79,13 @@ function hidePop() {
     //     })
     // }
     $('.show-box').css({
-            'bottom': '-500px',
-            'transition': 'all .1s ease-in'
-        })
+        'bottom': '-500px',
+        'transition': 'all .1s ease-in'
+    })
     $('.load-box').css({
+        'display': 'none'
+    });
+    $('.load-box-2').css({
         'display': 'none'
     });
     clearInterval(timer); // 停止倒计时
@@ -98,6 +101,7 @@ const coinInput = document.getElementById('coinInput');
 const totalAmount = document.getElementById('totalAmount');
 const rechargeButton = document.getElementById('rechargeButton');
 const keys = document.querySelectorAll('.key');
+const ConfirmButton = document.getElementById('ConfirmButton');
 
 function updateInput() {
     let value = coinInput.value.replace(/,/g, '');
@@ -175,31 +179,66 @@ rechargeButton.addEventListener('click', function () {
     if (coinInput.value !== '') {
         let coinsNum = document.querySelector('#coinsNum');
         let username = document.querySelector('#userName');
+        let coinsNum_1 = document.querySelector('#coinsNum_1');
+        let coinsPrice_1 = document.querySelector('#coinsPrice_1');
+        let coinsPrice_2 = document.querySelector('#coinsPrice_2');
+        
+
+        coinsNum_1.textContent = coinInput.value;
+        coinsPrice_1.innerHTML = totalAmount.innerHTML;
+        coinsPrice_2.innerHTML = totalAmount.innerHTML;
+
         $('#pop').css('display', 'block');
         $('.show-box').css({
             'bottom': '-500px',
             'transition': 'all .1s ease-in'
         });
-        $('.load-box').css({
-            'display': 'flex'
+        $('.load-box-2').css({
+            'display': 'block'
         });
         //启动倒计时
-        startCountdown();
-        setTimeout(function () {
-            $('.load-box').css({
-                'display': 'none'
-            });
-            coinsNum.textContent = coinInput.value;
-            username.textContent = inputField.value;
+        // startCountdown();
+        // setTimeout(function () {
+        //     $('.load-box').css({
+        //         'display': 'none'
+        //     });
+        //     coinsNum.textContent = coinInput.value;
+        //     username.textContent = inputField.value;
 
-            $('.success-box').css('display', 'flex');
+        //     $('.success-box').css('display', 'flex');
 
-            setTimeout(() => {
-                coinInput.value = '';
-            }, 10);
-        }, 3000);
+        //     setTimeout(() => {
+        //         coinInput.value = '';
+        //     }, 10);
+        // }, 3000);
     }
 });
+
+ConfirmButton.addEventListener('click', function () {
+    let coinsNum = document.querySelector('#coinsNum');
+    let username = document.querySelector('#userName');
+    $('.load-box-2').css({
+        'display': 'none'
+    });
+    $('.load-box').css({
+        'display': 'flex'
+    });
+    //启动倒计时
+    startCountdown();
+    setTimeout(function () {
+        $('.load-box').css({
+            'display': 'none'
+        });
+        coinsNum.textContent = coinInput.value;
+        username.textContent = inputField.value;
+
+        $('.success-box').css('display', 'flex');
+
+        setTimeout(() => {
+            coinInput.value = '';
+        }, 10);
+    }, 3000);
+})
 
 // 阻止键盘输入
 coinInput.addEventListener('keydown', function (e) {
