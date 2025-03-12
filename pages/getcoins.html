@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Get Coins</title>
+    <!-- <title>Get Coins</title> -->
+    <title>استلام العملات</title>
     <link type="text/css" rel="stylesheet" href="../css/getcoins.css">
     <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="../js/getcoins.js" defer></script>
@@ -86,10 +87,12 @@
                             d="M512 128c11.2 0 20.8 9.6 22.4 20.8v340.8h339.2c12.8 0 22.4 9.6 22.4 22.4 0 11.2-9.6 20.8-20.8 22.4H534.4v339.2c0 12.8-9.6 22.4-22.4 22.4-11.2 0-20.8-9.6-22.4-20.8V534.4H150.4c-12.8 0-22.4-9.6-22.4-22.4 0-11.2 9.6-20.8 20.8-22.4h340.8V150.4c0-12.8 9.6-22.4 22.4-22.4z"
                             fill="#222222" p-id="1644"></path>
                     </svg>
-                    <span>Upload</span>
+                    <!-- <span>Upload</span> -->
+                    <span>رفع</span>
                 </button>
             </div>
-            <button class="login-button">Log in</button>
+            <!-- <button class="login-button">Log in</button> -->
+            <button class="login-button">سجل دخول</button>
             <button class="menu-button">
                 <span></span>
                 <span></span>
@@ -101,11 +104,14 @@
     <div class="container">
 
         <div class="name-box">
-                <h2 class="name">Get Coins</h2>
-                <div style="cursor: pointer;">view transaction history</div>
+                <!-- <h2 class="name">Get Coins</h2>
+                <div style="cursor: pointer;">view transaction history</div> -->
+                <h2 class="name">استلام العملات</h2>
+                <div style="cursor: pointer;">عرض تاريخ المعاملات</div>
         </div>
         <div class="inputName">
-            <input type="text" id="inputField"  placeholder="Enter username"/>
+            <!-- <input type="text" id="inputField"  placeholder="Enter username"/> -->
+            <input type="text" id="inputField" placeholder="ادخل اسم المستخدم" />
             <span id="clearButton" class="clear-icon">
                 <!-- SVG × 图标 -->
                 <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
@@ -122,9 +128,8 @@
         </div>
 
         <div class="coinsBar">
-            <div class="recharge">Recharge</div>
-            <!-- <div class="divider"></div>
-            <div class="tips">Save around 25% with a lower third-party service fee.</div> -->
+            <!-- <div class="recharge">Recharge</div> -->
+            <div class="recharge">إعادة شحن</div>
         </div>
 
         <div class="coin-options">
@@ -249,7 +254,9 @@
                             d="M33 19a5.03 5.03 0 0 1-5.06-5h-3.38v13.61a3.07 3.07 0 0 1-3.1 3.06c-1.7 0-3.09-1.37-3.09-3.06a3.07 3.07 0 0 1 3.94-2.94v-3.4A6.43 6.43 0 0 0 15 27.6c0 3.54 2.9 6.4 6.47 6.4a6.43 6.43 0 0 0 6.47-6.39v-6.94A8.47 8.47 0 0 0 33 22.33V19Z"
                             fill="#fff"></path>
                     </svg>
-                    <strong>Custom</strong>
+                    <!-- <strong>Custom</strong> -->
+                    <strong>مخصص</strong>
+
                     <!-- <div class="price">large amount Supported</div> -->
                 </div>
             </div>
@@ -268,11 +275,13 @@
     </div>
 
     <div class="footer">
-        <div class="left">Total</div>
+        <!-- <div class="left">Total</div> -->
+        <div class="left">المجموع</div>
         <div class="right" id="buyButton">SAR$ 26</div>
-        <button class="buy-button">
+        <!-- <button class="buy-button">
             Recharge
-        </button>
+        </button> -->
+        <button class="buy-button">إعادة شحن</button>
     </div>
 
 
@@ -287,7 +296,8 @@
                         <path d="M19 12H5M12 19l-7-7 7-7" />
                     </svg>
                 </button>
-                <h1>Custom</h1>
+                <!-- <h1>Custom</h1> -->
+                <h1>مخصص</h1>
                 <button class="help-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -299,8 +309,12 @@
             </header>
             <main>
                 <div class="input-container">
-                    <label for="coinInput" style="color: #000;">
+                    <!-- <label for="coinInput" style="color: #000;">
                         Number of Coins
+                        <img style="width: 15px;" src="../imgs/down.png" alt="">
+                    </label> -->
+                    <label for="coinInput" style="color: #000;">
+                        عدد العملات
                         <img style="width: 15px;" src="../imgs/down.png" alt="">
                     </label>
 
@@ -339,7 +353,8 @@
                     <button class="key">0</button>
                 </div>
                 <div class="total">
-                    <span>Total</span>
+                    <!-- <span>Total</span> -->
+                    <span>المجموع</span>
                     <span id="totalAmount">SAR$0</span>
                 </div>
 
@@ -354,7 +369,9 @@
                                 d="M5 23.15V10.5c0-1.2 1.06-2.17 2.26-2.28 3.05-.25 8.87-1.52 15.34-6.99.8-.67 2-.67 2.8 0 6.46 5.46 12.28 6.74 15.34 7 1.2.1 2.26 1.07 2.26 2.27v12.65c0 14.13-14.77 21.8-18.27 23.43-.47.22-1 .22-1.47 0C19.76 44.96 5 37.28 5 23.15Zm4-11.1v11.1c0 5.57 2.88 10.04 6.56 13.5 3.1 2.91 6.5 4.86 8.44 5.85a37.07 37.07 0 0 0 8.43-5.85C36.11 33.2 39 28.72 39 23.15V12.04c-3.65-.53-9.1-2.16-15-6.8-5.91 4.64-11.35 6.27-15 6.8Z">
                             </path>
                         </svg>
-                        <strong>Recharge</strong>
+                        <!-- <strong>Recharge</strong> -->
+                        <strong>إعادة شحن</strong>
+
                     </button>
                 </div>
             </main>
@@ -366,8 +383,10 @@
     <div class="load-box">
         <div class="load-text">
             <iframe width="100" height="70" scrolling="no" frameborder="0" src="./loader.html" frameborder="0"></iframe>
-            <h3>Processing your payment</h3>
-            <p style="font-size:18px;color:#aaa;">This could take few seconds</p>
+            <!-- <h3>Processing your payment</h3> -->   
+            <h3>جاري معالجة الدفع</h3>
+            <!-- <p style="font-size:18px;color:#aaa;">This could take few seconds</p> -->
+            <p style="font-size:18px;color:#aaa;">قد يستغرق الأمر بضع ثوانٍ</p>
             <p style="color:#aaa;" id="timeLeft">05:00</p>
         </div>
     </div>
@@ -392,27 +411,32 @@
     
         <main>
             <div>
-                <p class="load-left">Cardholder's name:</p>
+                <!-- <p class="load-left">Cardholder's name:</p> -->
+                <p class="load-left">اسم صاحب البطاقة:</p>
                 <p class="load-right">Alu Alhab Tnari</p>
             </div>
             <div>
-                <p class="load-left">Currency:</p>
+                <!-- <p class="load-left">Currency:</p> -->
+                <p class="load-left">العملة:</p>
                 <p class="load-right"><span id="coinsNum_1">0</span></p>
             </div>
             <div>
-                <p class="load-left">Currency rate:</p>
+                <!-- <p class="load-left">Currency rate:</p> -->
+                <p class="load-left">سعر الصرف:</p>
                 <p class="load-right"><span id="coinsPrice_1">0</span></p>
             </div>
             <div>
-                <p class="load-left">Payment method:</p>
+                <!-- <p class="load-left">Payment method:</p> -->
+                <p class="load-left">طريقة الدفع:</p>
             </div>
             <div>
                 <img class="load-left" style="width: 50px;margin: 5px 5px 0 0;" src="../imgs/visa.png" alt="">
                 <p class="load-left">**********6621</p>
-                <p class="load-right">Verified</p>
+                <p class="load-right">تم التحقق</p>
             </div>
             <div>
-                <p class="load-left">Total:</p>
+                <!-- <p class="load-left">Total:</p> -->
+                <p class="load-left">المبلغ:</p>
                 <p class="load-right"><span id="coinsPrice_2">0</span></p>
             </div>
     
@@ -427,7 +451,9 @@
                             d="M5 23.15V10.5c0-1.2 1.06-2.17 2.26-2.28 3.05-.25 8.87-1.52 15.34-6.99.8-.67 2-.67 2.8 0 6.46 5.46 12.28 6.74 15.34 7 1.2.1 2.26 1.07 2.26 2.27v12.65c0 14.13-14.77 21.8-18.27 23.43-.47.22-1 .22-1.47 0C19.76 44.96 5 37.28 5 23.15Zm4-11.1v11.1c0 5.57 2.88 10.04 6.56 13.5 3.1 2.91 6.5 4.86 8.44 5.85a37.07 37.07 0 0 0 8.43-5.85C36.11 33.2 39 28.72 39 23.15V12.04c-3.65-.53-9.1-2.16-15-6.8-5.91 4.64-11.35 6.27-15 6.8Z">
                         </path>
                     </svg>
-                    <strong>Confirm</strong>
+                    <!-- <strong>Confirm</strong> -->
+                    <strong>تأكيد</strong>
+                    
                 </button>
             </div>
         </main>
@@ -441,10 +467,15 @@
                 <img src="../imgs/success.png" alt="">
             </div>
 
-            <h3>Payment Completed</h3>
-            <p style="text-align: center;font-size:16px;color:#aaa;">
+            <!-- <h3>Payment Completed</h3> -->
+            <h3>اكتمل الدفع</h3>
+            <!-- <p style="text-align: center;font-size:16px;color:#aaa;">
                 You top up <span id="coinsNum">0</span> coins to <span id="userName">user</span>, and you can use the coins to send virtual gifts, 24hr-arrival</p>
-            <button class="backBtn" onclick="hidePop()">Go back</button>
+            <button class="backBtn" onclick="hidePop()">Go back</button> -->
+            <p style="text-align: center;font-size:16px;color:#aaa;">
+                اشحن رصيدك<span id="coinsNum">0</span>عملات معدنية إلى<span id="userName">user</span>,ويمكنك استخدام العملات المعدنية لإرسال هدايا افتراضية تصل على مدار 24 ساعة
+            </p>
+            <button class="backBtn" onclick="hidePop()">رجوع</button>
         </div>
     </div>
 

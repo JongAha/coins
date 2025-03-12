@@ -64,6 +64,9 @@ body {
     .hide{
         display: none;
     }
+    .login-button{
+        font-size: 12px !important;
+    }
 }
 
 .upload-button {
