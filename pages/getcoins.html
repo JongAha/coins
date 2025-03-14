@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <title data-i18n="title">Get Coins</title>
     <link type="text/css" rel="stylesheet" href="../css/getcoins.css">
     <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/2.1.3/jquery.min.js"></script>
@@ -86,8 +87,8 @@
     <div class="container">
 
         <div class="name-box">
-                <h2 class="name" data-i18n="get_coins">Get Coins</h2>
-                <div style="cursor: pointer;" data-i18n="view_transaction">view transaction history</div>
+            <h2 class="name" data-i18n="get_coins">Get Coins</h2>
+            <div style="cursor: pointer;" data-i18n="view_transaction">view transaction history</div>
         </div>
         <div class="inputName">
             <input type="text" id="inputField" placeholder="" data-i18n-placeholder="enter_username">
@@ -97,8 +98,8 @@
                     class="icon">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg> -->
-                <svg t="1729390778379" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3470"
-                    width="15" height="15">
+                <svg t="1729390778379" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="3470" width="15" height="15">
                     <path
                         d="M519.656727 472.459636l-160.512-160.488727a36.584727 36.584727 0 1 0-51.712 51.712l160.488728 160.512-160.488728 160.512a36.584727 36.584727 0 1 0 51.712 51.712l160.512-160.512 160.488728 160.512a36.584727 36.584727 0 1 0 51.735272-51.712l-160.512-160.512 160.512-160.512a36.584727 36.584727 0 1 0-51.735272-51.712L519.68 472.436364zM512 1024C229.236364 1024 0 794.763636 0 512S229.236364 0 512 0s512 229.236364 512 512-229.236364 512-512 512z"
                         fill="#888888" p-id="3471"></path>
@@ -347,17 +348,18 @@
 
     <!-- 充值加载中 -->
     <div class="load-box">
-        <div class="load-text">
+        <iframe width="100" height="70" scrolling="no" frameborder="0" src="./loader.html" frameborder="0" style="margin-top: -15px;"></iframe>
+        <!-- <div class="load-text">
             <iframe width="100" height="70" scrolling="no" frameborder="0" src="./loader.html" frameborder="0"></iframe>
-                <h3 data-i18n="processing_payment">Processing your payment</h3>   
+            <h3 data-i18n="processing_payment">Processing your payment</h3>
             <p style="font-size:18px;color:#aaa;" data-i18n="few_seconds">This could take few seconds</p>
             <p style="color:#aaa;" id="timeLeft">05:00</p>
-        </div>
+        </div> -->
     </div>
 
     <!-- 充值加载version2 -->
     <div class="load-box-2">
-    
+
         <header class="showheader">
             <button class="back-button" onclick="hidePop()">
                 <p style="font-size: 30px;margin: 0;">×</p>
@@ -372,7 +374,7 @@
                 </svg>
             </button>
         </header>
-    
+
         <main>
             <div>
                 <p class="load-left" data-i18n="cardholder_name">Cardholder's name:</p>
@@ -398,7 +400,7 @@
                 <p class="load-left" data-i18n="total">Total</p>
                 <p class="load-right"><span id="coinsPrice_2">0</span></p>
             </div>
-    
+
             <div>
                 <button id="ConfirmButton">
                     <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="1em"
@@ -411,7 +413,7 @@
                         </path>
                     </svg>
                     <strong data-i18n="confirm">Confirm</strong>
-                    
+
                 </button>
             </div>
         </main>
@@ -427,7 +429,9 @@
 
             <h3 data-i18n="payment_completed">Payment Completed</h3>
             <p style="text-align: center;font-size:16px;color:#aaa;">
-                <span data-i18n="top_up">You top up</span> <span id="coinsNum">0</span> <span data-i18n="coins_to">coins to</span> <span id="userName">user</span>, <span data-i18n="send_gifts">and you can use the coins to send virtual gifts, 24hr-arrival</span>
+                <span data-i18n="top_up">You top up</span> <span id="coinsNum">0</span> <span data-i18n="coins_to">coins
+                    to</span> <span id="userName">user</span>, <span data-i18n="send_gifts">and you can use the coins to
+                    send virtual gifts, 24hr-arrival</span>
             </p>
             <button class="backBtn" onclick="hidePop()" data-i18n="go_back">Go back</button>
         </div>

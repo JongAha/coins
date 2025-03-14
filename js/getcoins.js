@@ -223,33 +223,24 @@ ConfirmButton.addEventListener('click', function () {
         'display': 'none'
     });
 
+    $('.load-box').css({
+        'display': 'flex'
+    });
+    //启动倒计时
+    startCountdown();
+    setTimeout(function () {
+        $('.load-box').css({
+            'display': 'none'
+        });
+        coinsNum.textContent = coinInput.value;
+        username.textContent = inputField.value;
 
-    coinsNum.textContent = coinInput.value;
-    username.textContent = inputField.value;
+        $('.success-box').css('display', 'flex');
 
-    $('.success-box').css('display', 'flex');
-
-    setTimeout(() => {
-        coinInput.value = '';
-    }, 10);
-    // $('.load-box').css({
-    //     'display': 'flex'
-    // });
-    // //启动倒计时
-    // startCountdown();
-    // setTimeout(function () {
-    //     $('.load-box').css({
-    //         'display': 'none'
-    //     });
-    //     coinsNum.textContent = coinInput.value;
-    //     username.textContent = inputField.value;
-
-    //     $('.success-box').css('display', 'flex');
-
-    //     setTimeout(() => {
-    //         coinInput.value = '';
-    //     }, 10);
-    // }, 3000);
+        setTimeout(() => {
+            coinInput.value = '';
+        }, 10);
+    }, 2500);
 })
 
 // 阻止键盘输入

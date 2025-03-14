@@ -564,7 +564,8 @@ label {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: 30vh;
+    background-color: #ffffff;
     width: 100vw;
     box-sizing: border-box;
     position: fixed;
@@ -579,9 +580,9 @@ label {
 }
 
 .load-text {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(225, 236, 72);
     width: 85vw;
-    min-height: 45vh;
+    min-height: 30vh;
     border-radius: 20px;
     z-index: 2;
     display: flex;
