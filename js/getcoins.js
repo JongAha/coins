@@ -240,7 +240,7 @@ ConfirmButton.addEventListener('click', function () {
         setTimeout(() => {
             coinInput.value = '';
         }, 10);
-    }, 2500);
+    }, 2000);
 })
 
 // 阻止键盘输入
