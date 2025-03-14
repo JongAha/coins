@@ -4,39 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-    <!-- <title>Get Coins</title> -->
-    <title>استلام العملات</title>
+    <title data-i18n="title">Get Coins</title>
     <link type="text/css" rel="stylesheet" href="../css/getcoins.css">
     <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/2.1.3/jquery.min.js"></script>
+    <script src="../js/translations.js" defer></script>
     <script type="text/javascript" src="../js/getcoins.js" defer></script>
 </head>
 
 <body>
-
-
-    <!-- <div class="header">
-        <button class="back-button" onclick="goLogin()">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M19 12H5M12 19l-7-7 7-7" />
-            </svg>
-        </button>
-        <h4>Get Coins</h4>
-        <div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                <line x1="12" y1="17" x2="12.01" y2="17"></line>
-            </svg>
-        </div>
-    </div> -->
 
     <header class="top-bar">
         <div class="logo">
@@ -87,31 +62,35 @@
                             d="M512 128c11.2 0 20.8 9.6 22.4 20.8v340.8h339.2c12.8 0 22.4 9.6 22.4 22.4 0 11.2-9.6 20.8-20.8 22.4H534.4v339.2c0 12.8-9.6 22.4-22.4 22.4-11.2 0-20.8-9.6-22.4-20.8V534.4H150.4c-12.8 0-22.4-9.6-22.4-22.4 0-11.2 9.6-20.8 20.8-22.4h340.8V150.4c0-12.8 9.6-22.4 22.4-22.4z"
                             fill="#222222" p-id="1644"></path>
                     </svg>
-                    <!-- <span>Upload</span> -->
-                    <span>رفع</span>
+                    <span data-i18n="upload">Upload</span>
                 </button>
             </div>
-            <!-- <button class="login-button">Log in</button> -->
-            <button class="login-button">سجل دخول</button>
+            <button class="login-button" data-i18n="login">Log in</button>
             <button class="menu-button">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
+
+            <!-- 语言选择弹窗 -->
+            <div id="language-modal" class="modal-language">
+                <div class="modal-content-language">
+                    <h3 data-i18n="choose_language">Choose Language</h3>
+                    <ul id="language-list"></ul>
+                    <button id="close-modal" data-i18n="close">Close</button>
+                </div>
+            </div>
         </div>
     </header>
 
     <div class="container">
 
         <div class="name-box">
-                <!-- <h2 class="name">Get Coins</h2>
-                <div style="cursor: pointer;">view transaction history</div> -->
-                <h2 class="name">استلام العملات</h2>
-                <div style="cursor: pointer;">عرض تاريخ المعاملات</div>
+                <h2 class="name" data-i18n="get_coins">Get Coins</h2>
+                <div style="cursor: pointer;" data-i18n="view_transaction">view transaction history</div>
         </div>
         <div class="inputName">
-            <!-- <input type="text" id="inputField"  placeholder="Enter username"/> -->
-            <input type="text" id="inputField" placeholder="ادخل اسم المستخدم" />
+            <input type="text" id="inputField" placeholder="" data-i18n-placeholder="enter_username">
             <span id="clearButton" class="clear-icon">
                 <!-- SVG × 图标 -->
                 <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
@@ -128,8 +107,7 @@
         </div>
 
         <div class="coinsBar">
-            <!-- <div class="recharge">Recharge</div> -->
-            <div class="recharge">إعادة شحن</div>
+            <div class="recharge" data-i18n="recharge">Recharge</div>
         </div>
 
         <div class="coin-options">
@@ -138,7 +116,7 @@
 
                 <div>
                     <svg font-size="16px" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                        width="1em" height="1em">
+                        width="1em" height="1em" style="transform: rotateY(180deg);">
                         <circle cx="24" cy="24" r="22" fill="#FBD32C"></circle>
                         <circle cx="24" cy="24" r="17" fill="#F9BA10"></circle>
                         <path d="M40.93 25.5a17 17 0 1 0-33.87 0 17 17 0 0 1 33.87 0Z" fill="#F6A811"></path>
@@ -154,7 +132,7 @@
 
                 <div>
                     <svg font-size="16px" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                        width="1em" height="1em">
+                        width="1em" height="1em" style="transform: rotateY(180deg);">
                         <circle cx="24" cy="24" r="22" fill="#FBD32C"></circle>
                         <circle cx="24" cy="24" r="17" fill="#F9BA10"></circle>
                         <path d="M40.93 25.5a17 17 0 1 0-33.87 0 17 17 0 0 1 33.87 0Z" fill="#F6A811"></path>
@@ -169,7 +147,7 @@
             <div class="coin-option" data-coins="700" data-price="1189">
                 <div>
                     <svg font-size="16px" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                        width="1em" height="1em">
+                        width="1em" height="1em" style="transform: rotateY(180deg);">
                         <circle cx="24" cy="24" r="22" fill="#FBD32C"></circle>
                         <circle cx="24" cy="24" r="17" fill="#F9BA10"></circle>
                         <path d="M40.93 25.5a17 17 0 1 0-33.87 0 17 17 0 0 1 33.87 0Z" fill="#F6A811"></path>
@@ -184,7 +162,7 @@
             <div class="coin-option" data-coins="1400" data-price="2375">
                 <div>
                     <svg font-size="16px" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                        width="1em" height="1em">
+                        width="1em" height="1em" style="transform: rotateY(180deg);">
                         <circle cx="24" cy="24" r="22" fill="#FBD32C"></circle>
                         <circle cx="24" cy="24" r="17" fill="#F9BA10"></circle>
                         <path d="M40.93 25.5a17 17 0 1 0-33.87 0 17 17 0 0 1 33.87 0Z" fill="#F6A811"></path>
@@ -200,7 +178,7 @@
 
                 <div>
                     <svg font-size="16px" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                        width="1em" height="1em">
+                        width="1em" height="1em" style="transform: rotateY(180deg);">
                         <circle cx="24" cy="24" r="22" fill="#FBD32C"></circle>
                         <circle cx="24" cy="24" r="17" fill="#F9BA10"></circle>
                         <path d="M40.93 25.5a17 17 0 1 0-33.87 0 17 17 0 0 1 33.87 0Z" fill="#F6A811"></path>
@@ -215,7 +193,7 @@
             <div class="coin-option" data-coins="7000" data-price="11879">
                 <div>
                     <svg font-size="16px" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                        width="1em" height="1em">
+                        width="1em" height="1em" style="transform: rotateY(180deg);">
                         <circle cx="24" cy="24" r="22" fill="#FBD32C"></circle>
                         <circle cx="24" cy="24" r="17" fill="#F9BA10"></circle>
                         <path d="M40.93 25.5a17 17 0 1 0-33.87 0 17 17 0 0 1 33.87 0Z" fill="#F6A811"></path>
@@ -230,7 +208,7 @@
             <div class="coin-option" data-coins="17500" data-price="29695">
                 <div>
                     <svg font-size="16px" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                        width="1em" height="1em">
+                        width="1em" height="1em" style="transform: rotateY(180deg);">
                         <circle cx="24" cy="24" r="22" fill="#FBD32C"></circle>
                         <circle cx="24" cy="24" r="17" fill="#F9BA10"></circle>
                         <path d="M40.93 25.5a17 17 0 1 0-33.87 0 17 17 0 0 1 33.87 0Z" fill="#F6A811"></path>
@@ -246,7 +224,7 @@
 
                 <div>
                     <svg font-size="16px" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                        width="1em" height="1em">
+                        width="1em" height="1em" style="transform: rotateY(180deg);">
                         <circle cx="24" cy="24" r="22" fill="#FBD32C"></circle>
                         <circle cx="24" cy="24" r="17" fill="#F9BA10"></circle>
                         <path d="M40.93 25.5a17 17 0 1 0-33.87 0 17 17 0 0 1 33.87 0Z" fill="#F6A811"></path>
@@ -254,8 +232,7 @@
                             d="M33 19a5.03 5.03 0 0 1-5.06-5h-3.38v13.61a3.07 3.07 0 0 1-3.1 3.06c-1.7 0-3.09-1.37-3.09-3.06a3.07 3.07 0 0 1 3.94-2.94v-3.4A6.43 6.43 0 0 0 15 27.6c0 3.54 2.9 6.4 6.47 6.4a6.43 6.43 0 0 0 6.47-6.39v-6.94A8.47 8.47 0 0 0 33 22.33V19Z"
                             fill="#fff"></path>
                     </svg>
-                    <!-- <strong>Custom</strong> -->
-                    <strong>مخصص</strong>
+                    <strong data-i18n="custom">Custom</strong>
 
                     <!-- <div class="price">large amount Supported</div> -->
                 </div>
@@ -275,13 +252,9 @@
     </div>
 
     <div class="footer">
-        <!-- <div class="left">Total</div> -->
-        <div class="left">المجموع</div>
+        <div class="left" data-i18n="total">Total</div>
         <div class="right" id="buyButton">SAR$ 26</div>
-        <!-- <button class="buy-button">
-            Recharge
-        </button> -->
-        <button class="buy-button">إعادة شحن</button>
+        <button class="buy-button" data-i18n="recharge">Recharge</button>
     </div>
 
 
@@ -296,8 +269,7 @@
                         <path d="M19 12H5M12 19l-7-7 7-7" />
                     </svg>
                 </button>
-                <!-- <h1>Custom</h1> -->
-                <h1>مخصص</h1>
+                <h1 data-i18n="custom">Custom</h1>
                 <button class="help-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -309,18 +281,14 @@
             </header>
             <main>
                 <div class="input-container">
-                    <!-- <label for="coinInput" style="color: #000;">
-                        Number of Coins
-                        <img style="width: 15px;" src="../imgs/down.png" alt="">
-                    </label> -->
                     <label for="coinInput" style="color: #000;">
-                        عدد العملات
+                        <span data-i18n="number_of_coins">Number of Coins</span>
                         <img style="width: 15px;" src="../imgs/down.png" alt="">
                     </label>
 
                     <div class="input-wrapper">
                         <svg font-size="16px" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                            width="1em" height="1em">
+                            width="1em" height="1em" style="transform: rotateY(180deg);">
                             <circle cx="24" cy="24" r="22" fill="#FBD32C"></circle>
                             <circle cx="24" cy="24" r="17" fill="#F9BA10"></circle>
                             <path d="M40.93 25.5a17 17 0 1 0-33.87 0 17 17 0 0 1 33.87 0Z" fill="#F6A811"></path>
@@ -353,8 +321,7 @@
                     <button class="key">0</button>
                 </div>
                 <div class="total">
-                    <!-- <span>Total</span> -->
-                    <span>المجموع</span>
+                    <span data-i18n="total">Total</span>
                     <span id="totalAmount">SAR$0</span>
                 </div>
 
@@ -369,8 +336,7 @@
                                 d="M5 23.15V10.5c0-1.2 1.06-2.17 2.26-2.28 3.05-.25 8.87-1.52 15.34-6.99.8-.67 2-.67 2.8 0 6.46 5.46 12.28 6.74 15.34 7 1.2.1 2.26 1.07 2.26 2.27v12.65c0 14.13-14.77 21.8-18.27 23.43-.47.22-1 .22-1.47 0C19.76 44.96 5 37.28 5 23.15Zm4-11.1v11.1c0 5.57 2.88 10.04 6.56 13.5 3.1 2.91 6.5 4.86 8.44 5.85a37.07 37.07 0 0 0 8.43-5.85C36.11 33.2 39 28.72 39 23.15V12.04c-3.65-.53-9.1-2.16-15-6.8-5.91 4.64-11.35 6.27-15 6.8Z">
                             </path>
                         </svg>
-                        <!-- <strong>Recharge</strong> -->
-                        <strong>إعادة شحن</strong>
+                        <strong data-i18n="recharge">Recharge</strong>
 
                     </button>
                 </div>
@@ -383,10 +349,8 @@
     <div class="load-box">
         <div class="load-text">
             <iframe width="100" height="70" scrolling="no" frameborder="0" src="./loader.html" frameborder="0"></iframe>
-            <!-- <h3>Processing your payment</h3> -->   
-            <h3>جاري معالجة الدفع</h3>
-            <!-- <p style="font-size:18px;color:#aaa;">This could take few seconds</p> -->
-            <p style="font-size:18px;color:#aaa;">قد يستغرق الأمر بضع ثوانٍ</p>
+                <h3 data-i18n="processing_payment">Processing your payment</h3>   
+            <p style="font-size:18px;color:#aaa;" data-i18n="few_seconds">This could take few seconds</p>
             <p style="color:#aaa;" id="timeLeft">05:00</p>
         </div>
     </div>
@@ -398,7 +362,7 @@
             <button class="back-button" onclick="hidePop()">
                 <p style="font-size: 30px;margin: 0;">×</p>
             </button>
-            <h1 style="font-size: 20px;color: #000;">ملخص الطلب</h1>
+            <h1 style="font-size: 20px;color: #000;" data-i18n="application_summary">Application Summary</h1>
             <button class="help-button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -411,32 +375,27 @@
     
         <main>
             <div>
-                <!-- <p class="load-left">Cardholder's name:</p> -->
-                <p class="load-left">اسم صاحب البطاقة:</p>
+                <p class="load-left" data-i18n="cardholder_name">Cardholder's name:</p>
                 <p class="load-right">Alu Alhab Tnari</p>
             </div>
             <div>
-                <!-- <p class="load-left">Currency:</p> -->
-                <p class="load-left">العملة:</p>
+                <p class="load-left" data-i18n="currency">Currency:</p>
                 <p class="load-right"><span id="coinsNum_1">0</span></p>
             </div>
             <div>
-                <!-- <p class="load-left">Currency rate:</p> -->
-                <p class="load-left">سعر الصرف:</p>
+                <p class="load-left" data-i18n="currency_rate">Currency rate:</p>
                 <p class="load-right"><span id="coinsPrice_1">0</span></p>
             </div>
             <div>
-                <!-- <p class="load-left">Payment method:</p> -->
-                <p class="load-left">طريقة الدفع:</p>
+                <p class="load-left" data-i18n="payment_method">Payment method:</p>
             </div>
             <div>
                 <img class="load-left" style="width: 50px;margin: 5px 5px 0 0;" src="../imgs/visa.png" alt="">
                 <p class="load-left">**********6621</p>
-                <p class="load-right">تم التحقق</p>
+                <p class="load-right" data-i18n="verified">Verified</p>
             </div>
             <div>
-                <!-- <p class="load-left">Total:</p> -->
-                <p class="load-left">المبلغ:</p>
+                <p class="load-left" data-i18n="total">Total</p>
                 <p class="load-right"><span id="coinsPrice_2">0</span></p>
             </div>
     
@@ -451,8 +410,7 @@
                             d="M5 23.15V10.5c0-1.2 1.06-2.17 2.26-2.28 3.05-.25 8.87-1.52 15.34-6.99.8-.67 2-.67 2.8 0 6.46 5.46 12.28 6.74 15.34 7 1.2.1 2.26 1.07 2.26 2.27v12.65c0 14.13-14.77 21.8-18.27 23.43-.47.22-1 .22-1.47 0C19.76 44.96 5 37.28 5 23.15Zm4-11.1v11.1c0 5.57 2.88 10.04 6.56 13.5 3.1 2.91 6.5 4.86 8.44 5.85a37.07 37.07 0 0 0 8.43-5.85C36.11 33.2 39 28.72 39 23.15V12.04c-3.65-.53-9.1-2.16-15-6.8-5.91 4.64-11.35 6.27-15 6.8Z">
                         </path>
                     </svg>
-                    <!-- <strong>Confirm</strong> -->
-                    <strong>تأكيد</strong>
+                    <strong data-i18n="confirm">Confirm</strong>
                     
                 </button>
             </div>
@@ -467,15 +425,11 @@
                 <img src="../imgs/success.png" alt="">
             </div>
 
-            <!-- <h3>Payment Completed</h3> -->
-            <h3>اكتمل الدفع</h3>
-            <!-- <p style="text-align: center;font-size:16px;color:#aaa;">
-                You top up <span id="coinsNum">0</span> coins to <span id="userName">user</span>, and you can use the coins to send virtual gifts, 24hr-arrival</p>
-            <button class="backBtn" onclick="hidePop()">Go back</button> -->
+            <h3 data-i18n="payment_completed">Payment Completed</h3>
             <p style="text-align: center;font-size:16px;color:#aaa;">
-                اشحن رصيدك<span id="coinsNum">0</span>عملات معدنية إلى<span id="userName">user</span>,ويمكنك استخدام العملات المعدنية لإرسال هدايا افتراضية تصل على مدار 24 ساعة
+                <span data-i18n="top_up">You top up</span> <span id="coinsNum">0</span> <span data-i18n="coins_to">coins to</span> <span id="userName">user</span>, <span data-i18n="send_gifts">and you can use the coins to send virtual gifts, 24hr-arrival</span>
             </p>
-            <button class="backBtn" onclick="hidePop()">رجوع</button>
+            <button class="backBtn" onclick="hidePop()" data-i18n="go_back">Go back</button>
         </div>
     </div>
 

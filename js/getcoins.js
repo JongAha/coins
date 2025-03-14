@@ -92,6 +92,8 @@ function hidePop() {
     totalTime = 5 * 60 - 1; // 重置倒计时时间
 
     $('.success-box').css('display', 'none');
+
+    $('#language-modal').css('display', 'none');
 }
 
 
@@ -220,24 +222,34 @@ ConfirmButton.addEventListener('click', function () {
     $('.load-box-2').css({
         'display': 'none'
     });
-    $('.load-box').css({
-        'display': 'flex'
-    });
-    //启动倒计时
-    startCountdown();
-    setTimeout(function () {
-        $('.load-box').css({
-            'display': 'none'
-        });
-        coinsNum.textContent = coinInput.value;
-        username.textContent = inputField.value;
 
-        $('.success-box').css('display', 'flex');
 
-        setTimeout(() => {
-            coinInput.value = '';
-        }, 10);
-    }, 3000);
+    coinsNum.textContent = coinInput.value;
+    username.textContent = inputField.value;
+
+    $('.success-box').css('display', 'flex');
+
+    setTimeout(() => {
+        coinInput.value = '';
+    }, 10);
+    // $('.load-box').css({
+    //     'display': 'flex'
+    // });
+    // //启动倒计时
+    // startCountdown();
+    // setTimeout(function () {
+    //     $('.load-box').css({
+    //         'display': 'none'
+    //     });
+    //     coinsNum.textContent = coinInput.value;
+    //     username.textContent = inputField.value;
+
+    //     $('.success-box').css('display', 'flex');
+
+    //     setTimeout(() => {
+    //         coinInput.value = '';
+    //     }, 10);
+    // }, 3000);
 })
 
 // 阻止键盘输入
@@ -248,3 +260,48 @@ coinInput.addEventListener('keydown', function (e) {
 // 初始化输入框
 updateInput();
 
+
+//语言选择
+function changeLanguage(lang) {
+    if (!translations[lang]) return;
+
+    document.querySelectorAll("[data-i18n]").forEach(element => {
+        const key = element.getAttribute("data-i18n");
+        element.textContent = translations[lang][key] || element.textContent;
+    });
+
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(element => {
+        const key = element.getAttribute("data-i18n-placeholder");
+        element.setAttribute("placeholder", translations[lang][key]);
+    });
+
+    localStorage.setItem("selectedLanguage", lang);
+}
+
+const savedLang = localStorage.getItem("selectedLanguage") || "en";
+changeLanguage(savedLang);
+
+const modal = document.getElementById("language-modal");
+const languageList = document.getElementById("language-list");
+
+document.querySelector(".menu-button").addEventListener("click", function () {
+    $('#pop').css('display', 'block');
+    modal.style.display = "block";
+    languageList.innerHTML = "";
+
+    Object.keys(languageNames).forEach(lang => {
+        const li = document.createElement("li");
+        li.textContent = languageNames[lang]; // 始终显示英语
+        li.addEventListener("click", () => {
+            changeLanguage(lang);
+            modal.style.display = "none";
+            $('#pop').css('display', 'none');
+        });
+        languageList.appendChild(li);
+    });
+});
+
+document.getElementById("close-modal").addEventListener("click", function () {
+    modal.style.display = "none";
+    $('#pop').css('display', 'none');
+});
