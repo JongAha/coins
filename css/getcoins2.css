@@ -530,6 +530,7 @@ label {
     position: relative;
     display: flex;
     align-items: center;
+    flex-direction: row;
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 10px;
@@ -543,6 +544,7 @@ label {
     border: none;
     font-size: 22px;
     flex-grow: 1;
+    margin-top: 2px;
 }
 
 #coinInput:focus {
